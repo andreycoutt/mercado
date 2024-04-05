@@ -1,0 +1,64 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/favicon-32x32.png' %}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/entrega.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+    <title>Lista de Entregas    </title>
+
+
+</head>
+<body>
+   <div class="table-responsive">
+    <div  class="container p-5">
+        <h3>Lista de Entregas</h3>
+        <a href="{% url 'cadastrar-entrega' %}" class="btn btn-dark btn-sm" >Nova Entrega</a>
+        <a href="{% url 'inicio' %}" class="btn btn-dark btn-sm" >Pag. Inicial</a>
+        <hr>
+        <table class="table table-striped">
+            <tr>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th>Caixas</th>
+                <th>Volume Extra</th>
+                <th>Nome do Embalador</th>
+                <th>Data de Compra</th>
+                <th>Data e hora de Entrega</th>
+                <th>Opções</th>
+            </tr>
+
+            {% for entrega in object_list %}
+            <tr>
+                <td>{{ entrega.nome }}</td>
+                <td>{{ entrega.endereco }}</td>
+                <td>{{ entrega.caixas }}</td>
+                <td>{{ entrega.volumeextra }}</td>
+                <td>{{ entrega.nomeembalador }}</td>
+                <td>{{ entrega.datacompra }}</td>
+                <td>{{ entrega.datahoraentrega}}</td>
+                <td>
+                   <a href="{% url 'editar-entrega' entrega.pk %}" class="btn btn-outline-warning btn-sm p-1" title="Editar">E</a>
+                   
+                   <a href="{% url 'excluir-entrega' entrega.pk %}" class="btn btn-outline-danger btn-sm p-1" title="Excluir">X</a>
+                </td>   
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="8">Sem entregas registradas</td>
+            </tr>
+            {% endfor %}
+
+        </table>
+    </div>
+</div>
+</body>
+</html>

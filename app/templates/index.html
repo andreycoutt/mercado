@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="static/img/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="static/css/style.css"> 
+  <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <title>PERIM CENTER</title>
+
+</head>
+<body>
+    <header>
+      <nav class="nav-bar">
+            <div class="logo">
+                <h1>Perim Center</h1>
+            </div>    
+      
+            <div class="nav-list">
+                <ul>
+                  <li class="nav-item"><a href="http://127.0.0.1:8000/cadastrar/cliente/" class="nav-link">Cadastrar Cliente</a> </li>
+                  <li class="nav-item"><a href="http://127.0.0.1:8000/cadastrar/entrega/" class="nav-link">Cadastrar Entrega</a> </li>
+                  <li class="nav-item"><a href="http://127.0.0.1:8000/listar/entrega" class="nav-link">Lista de Entregas</a> </li>
+                </ul>
+            </div>
+
+            <div class="login-button"><a href="http://127.0.0.1:8000/admin/login/?next=/admin/" target="_blank">Admin</a></div>
+  
+            <div class="mobile-menu-icon"><button onclick="menuShow()" ><img class="icon" src="static/img/menu_white_36dp.svg" alt=""></button></div>  
+
+      </nav>
+
+      <div class="mobile-menu">
+          <ul>
+              <li class="nav-item"><a href="http://127.0.0.1:8000/cadastrar/cliente/" class="nav-link">Cadastrar Cliente</a> </li>
+              <li class="nav-item"><a href="http://127.0.0.1:8000/cadastrar/entrega/" class="nav-link">Cadastrar Entrega</a> </li>
+              <li class="nav-item"><a href="http://127.0.0.1:8000/listar/entrega" class="nav-link">Lista de Entregas</a> </li>
+          </ul>
+
+          <div class="login-button"><a href="http://127.0.0.1:8000/admin/login/?next=/admin/">Admin</a></div>
+
+      </div>
+
+    </header>
+
+    <main>
+        <div class="container" >
+            <img src="static/img/perimlogo.png" alt="">
+        </div>
+    </main>
+   
+   
+  
+   <script src="static/js/script.js"></script>
+</body>
+</html>
